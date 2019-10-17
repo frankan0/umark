@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>{{websiteTitle}}</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./static/css/github.css" /> -->
+    <script src="./static/js/prism.js"></script>
+    <link rel="stylesheet" type="text/css" href="./static/css/common.css?v=0.0.1" />
+    <link rel="stylesheet" type="text/css" href="./static/css/prism.css" />
+</head>
+</body>
+    <div id="blog-title">
+        <h2>{{websiteTitle}}</h2>
+    </div>
+    <ul>
+        {% for article in articles %}
+            <li><a href="./{{article}}">{{article}}</a></li>
+        {% endfor %}
+    </ul>    
+</body>
+</html>
