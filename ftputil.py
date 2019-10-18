@@ -9,12 +9,7 @@ import socket
 
 
 class MyFTP:
-    """
-        ftp自动下载、自动上传脚本，可以递归目录操作
-        作者：欧阳鹏
-        博客地址：http://blog.csdn.net/ouyang_peng/article/details/79271113
-    """
-
+    
     def __init__(self, host, port=21):
         """ 初始化 FTP 客户端
         参数:
@@ -258,22 +253,3 @@ class MyFTP:
             pos += 1
         file_arr = [line[0], line[pos:]]
         return file_arr
-
-
-if __name__ == "__main__":
-    my_ftp = MyFTP("172.96.237.147")
-    my_ftp.login("blog_onenavigation", "pjEHTDMKRbXPeAxj")
-
-    # 下载单个文件
-    my_ftp.upload_file("SpringContext.html", "SpringContext.html")
-
-    # 下载目录
-    # my_ftp.download_file_tree("G:/ftp_test/", "App/AutoUpload/ouyangpeng/I12/")
-
-    # 上传单个文件
-    # my_ftp.upload_file("G:/ftp_test/Release/XTCLauncher.apk", "/App/AutoUpload/ouyangpeng/I12/Release/XTCLauncher.apk")
-
-    # 上传目录
-    # my_ftp.upload_file_tree("G:/ftp_test/", "/App/AutoUpload/ouyangpeng/I12/")
-
-    my_ftp.close()

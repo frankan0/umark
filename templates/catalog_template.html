@@ -9,13 +9,19 @@
     <link rel="stylesheet" type="text/css" href="./static/css/prism.css" />
 </head>
 </body>
-    <div id="blog-title">
-        <h2>{{websiteTitle}}</h2>
-    </div>
-    <ul>
-        {% for article in articles %}
-            <li><a href="./{{article}}">{{article}}</a></li>
-        {% endfor %}
-    </ul>    
+    <div id="container">
+            <div id="blog-title">
+                <h2>{{websiteTitle}}</h2>
+            </div>
+            
+                    {% for key, value in articles.items() %}
+                        <h3>{{key}}</h3>
+                        <ul>
+                              {% for article in value %}
+                              <li><a href="./{{ article.fileName }}">{{article.title}}</a></li>
+                              {% endfor %}
+                        </ul>    
+                    {% endfor %}
+    </div>      
 </body>
 </html>
